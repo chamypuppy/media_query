@@ -1,0 +1,99 @@
+ .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* △스크롤 내려도 헤더가 보이기 위한 밑작업▲ */
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 3px #000;
+  z-index: 20; /* 다른 요소와 겹쳤을 때 상대적으로 높은 위치? 앞에 보이게 */
+ }
+
+ .header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 16px; 
+ }
+
+ .header__start {
+  height: 40px;/* 요소 높이 */
+  line-height: 40px;/* 줄 높이 */
+  /* △이 두 작업을 한 이유는 스타트, 센터, 엔드 파트의 높이를 균일하게 맞추기 위함.(사실 이 단계에서는 이해가 어려웠는데, 햄버거 css를 적용하고 이해가 가능했다) */
+ }
+
+ .header__hamburger {
+  background-color: transparent;
+  border: none;
+  font-size: 1.6rem;
+ }
+
+ .header__title {
+  font-size: 1.2rem;
+  margin-left: 6px;
+ }
+
+ .header__center {
+  /* background-color: black; */
+  width: 50%;
+ }
+
+ .header__form {
+  display: flex;
+  max-width: 100%;
+ }
+
+ .header__input--text {
+  width: calc(100% - 60px); /* (전체 너비 100% - 버튼 크기 60px(으로 지정)) */
+  height: 40px;
+  padding: 0 6px;
+  border: 1px solid #8f8f8f;
+  border-right: none;
+  border-radius: 2px 0 0 2px;
+ }
+
+.header__input--button {
+  width: 60px;
+  height: 40px;
+  border: 1px solid #8f8f8f;
+  border-left: none;
+  border-radius: 0 2px 2px 0;
+}
+
+.header__end {
+  display: flex;
+}
+
+.header__search {
+  display: none;
+  margin-right: 5px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.header__profile {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #eaeaea;
+  border-radius: 50%;
+  background-color: tomato;
+  background-image: url(../index3_imgs/profile.png);
+  background-size: 40px 40px;
+}
+
+@media screen and (max-width: 800px) {
+  .header__title {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header__center {
+    display: none;
+  }
+  .header__search {
+    display: block;
+  }
+}

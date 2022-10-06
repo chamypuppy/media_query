@@ -1,0 +1,51 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.nav__wrapper {
+  min-width: 200px; /* 아무리 작아도 200px은 되어야한다! */
+  min-height: 100vh; /* 최소한 화면 높이만큼은 차지하고 있어야 한다 */
+  background-color: #f8f8f8;
+  padding: 80px 0 0 0;
+  list-style: none;
+}
+
+.nav__wrapper li {
+  display: flex;
+  padding: 10px 16px 10px; /* 상-10 우-16 하-10 좌-16*/
+}
+
+.nav__wrapper li:hover {
+  background-color: #eaeaea;
+}
+
+.nav__icon {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.nav__menu {
+  margin: 0 0 0 8px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 800px){
+  .nav__menu {
+    display: none;
+  }
+  .nav__wrapper {
+    min-width: 0; /* 너비 최소값이 사라지니 컨텐츠 크기만큼만 nav자리를 차지 */
+  }
+}
+
+@media screen and (max-width: 400px){
+  .nav { /* 강의에서는 nav__wrapper에 display: none을 함 */
+    display: none;
+  }
+}
